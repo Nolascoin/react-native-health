@@ -631,6 +631,7 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
     for(NSString * type in types) {
         for(NSString * template in templates) {
             NSString *successEvent = [NSString stringWithFormat:template, type];
+            NSLog(@"%@", successEvent);
             [supportedEvents addObject: successEvent];
         }
     }
@@ -761,6 +762,7 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
 }
 
 - (void)emitEventInternal:(NSNotification *)notification {
+    NSLog(@"Sending notification to -->%@", notification.name);
     [self sendEventWithName:notification.name
                    body:notification.userInfo];
 }
