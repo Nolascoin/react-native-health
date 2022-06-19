@@ -870,7 +870,7 @@
 
         completionHandler();
 
-        NSLog(@"[HealthKit] New sample from Apple HealthKit processed - %@", type);
+        NSLog(@"[HealthKit] New sample from Apple HealthKit processed (dep) - %@ %@", type, successEvent);
     }];
 
 
@@ -932,7 +932,7 @@
         }
         completionHandler();
 
-        NSLog(@"[HealthKit] New sample from Apple HealthKit processed - %@", type);
+        NSLog(@"[HealthKit] New sample from Apple HealthKit processed - %@ %@", type, successEvent);
     }];
 
 
