@@ -772,7 +772,7 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
     [[NSNotificationCenter defaultCenter] postNotificationName:name
                                                     object:self
                                                   userInfo:payload];
-
+}
 
 // Will be called when this module's last listener is removed, or on dealloc.
 -(void)stopObserving {
