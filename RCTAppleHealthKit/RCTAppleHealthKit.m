@@ -768,10 +768,11 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
 }
 
 - (void)emitEventWithName:(NSString *)name andPayload:(NSDictionary *)payload {
+    NSLog(@"Emitting event -->%@", name);
     [[NSNotificationCenter defaultCenter] postNotificationName:name
                                                     object:self
                                                   userInfo:payload];
-}
+
 
 // Will be called when this module's last listener is removed, or on dealloc.
 -(void)stopObserving {
