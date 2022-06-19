@@ -945,9 +945,10 @@
             }
             return;
         }
-
+        NSLog(@"[HealthKit] Background delivery enabled for %@", type);
         [self.healthStore executeQuery:query];
         if(self.hasListeners) {
+            NSLog(@"[HealthKit] Background observer set up for %@", type);
             [self emitEventWithName:successEvent andPayload:@{}];
         }
         }];
