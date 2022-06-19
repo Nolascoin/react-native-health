@@ -865,6 +865,7 @@
             return;
         }
 
+        NSLog(@"Emtting event: %@", successEvent);
         [self emitEventWithName:successEvent andPayload:@{}];
 
         completionHandler();
@@ -923,8 +924,11 @@
             }
             return;
         }
+
         if(self.hasListeners) {
             [self emitEventWithName:successEvent andPayload:@{}];
+        } else {
+          NSLog(@"has no listeners for %@", successEvent);
         }
         completionHandler();
 
