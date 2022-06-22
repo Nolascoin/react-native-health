@@ -44,7 +44,7 @@ RCT_EXPORT_MODULE();
     return sharedInstance;
 }
 
-+ (RCTCallableJSModules *) sharedJsModule {
++ (RCTCallableJSModules *)sharedJsModule {
     static RCTCallableJSModules *sharedJsModule = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -593,7 +593,7 @@ RCT_EXPORT_METHOD(getClinicalRecords:(NSDictionary *)input callback:(RCTResponse
         [self.healthStore requestAuthorizationToShareTypes:writeDataTypes readTypes:readDataTypes completion:^(BOOL success, NSError *error) {
             if (!success) {
                 NSString *errMsg = [NSString stringWithFormat:@"Error with HealthKit authorization: %@", error];
-                NSLog(errMsg);
+                 NSLog(@"%@", errMsg);
                 callback(@[RCTMakeError(errMsg, nil, nil)]);
                 return;
             } else {
